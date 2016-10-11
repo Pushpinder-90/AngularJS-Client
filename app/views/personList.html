@@ -1,0 +1,9 @@
+	<label align='right'>search here</label><input type="text" align='right' ng-model="searchBox.$" >
+			<!-- search here<input type="text" ng-model="searchBox.$" > -->
+	<div class="container" ng-controller="personList">	
+		<p class="form-group" ng-repeat="person in persons | filter:searchBox">
+		    <input type="text"   value = '{{ person.firstName + " " +person.lastName}}'  class="form-control"/> 
+		    <input type="text"   value = '{{ person.email}}'  class="form-control"/> 
+	  	</p>
+  	</div>
+

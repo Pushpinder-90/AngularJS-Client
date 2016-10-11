@@ -1,0 +1,52 @@
+<div class="img-bg">
+  <div class="container containermax-width">
+    <div class="row">
+      <div class="col-md-12">
+        <!-- <div ng-include src="'views/com/logo.html'"></div>-->
+        <div class="login-panel panel panel-default">
+          <div class="panel-heading">
+            <span class="glyphicon glyphicon-lock"> Unlock By Login</span> 
+          </div>
+          <div class="panel-body">
+            <form class="form-horizontal" role="form" name="loginForm" ng-submit="login()" method="post" novalidate>
+              <div class="form-group"  ng-if="showLoginError() && loginForm.username.$valid && loginForm.password.$valid">
+                <span class="validation-invalid col-sm-12" data-translate="navigation.login.error.msg"></span>
+                <span class="validation-invalid col-sm-12" data-translate="navigation.login.error.info"></span>
+              </div>
+              <div class="form-group">
+                <label data-translate="navigation.login.username" class="col-sm-3 control-label">
+                </label>
+                <div class="col-sm-9 ">
+                  <input type="text" ng-class="{'input-invalid' : (loginForm.username.$invalid) && !(loginForm.username.$pristine)}" class="form-control" ng-model="user.username" name="username" required message-id="user-error-element">
+                  <span data-translate="navigation.login.error.required.username" class="validation-invalid" ng-show="(loginForm.username.$invalid) && !(loginForm.username.$pristine)">
+                  </span>
+                </div>
+              </div>
+              <div class="form-group">
+                <label data-translate="navigation.login.password" class="col-sm-3 control-label">
+                </label>
+                <div class="col-sm-9">
+                  <input ng-class="{'input-invalid' : (loginForm.password.$invalid) && !(loginForm.password.$pristine)}"  type="password" class="form-control" 
+                    ng-model="user.password" 
+                    required
+                    name="password">
+                  <span class="validation-invalid" ng-show="(loginForm.password.$invalid) && !(loginForm.password.$pristine)">
+                    <p data-translate="navigation.login.error.required.password"></p>
+                  </span>
+                </div>
+              </div>
+            <div class="form-group last">
+                <div class="col-sm-offset-3 col-sm-9">
+                  <button type="submit" 
+                    ng-disabled="!loginForm.$valid"
+                    class="btn btn-signin btn-sm" value="Login" >Login
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+         </div>
+      </div>
+    </div>
+  </div>
+</div>

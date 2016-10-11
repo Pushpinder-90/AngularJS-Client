@@ -1,0 +1,26 @@
+<div class="col-md-6 col-md-offset-3" ng-controller="loginCtrl">
+<div class="container containermax-width">
+	<div class="panel-heading">
+		<form class="form-horizontal" name="loginForm" novalidate ng-submit="loginFuctionUser()" class="form-group">
+			
+		<div ng-class="{'has-error':loginForm.email.$invalid && loginForm.email.$dirty,'has-success':loginForm.email.$valid && loginForm.email.$dirty}">
+			<label for="email" class="control-label" >Email</label>
+			<input type="email" name="email" class="form-control" ng-model="user.email" required/>
+			<p ng-show="loginForm.email.$invalid && loginForm.email.$dirty ">Wrong email</p> 
+		</div>
+
+		<div class="form-group" ng-class="{'has-error':loginForm.password.$invalid && loginForm.password.$dirty,'has-success':loginForm.password.$valid && loginForm.password.$dirty}">
+			<label for="password" class="control-label">Password</label>
+			<input type="password" name="password" class="form-control" ng-model="user.password" required/>
+			<p ng-show="loginForm.password.$invalid && loginForm.password.$dirty ">Wrong password</p> 
+		</div>
+
+		<div class="form-actions">
+            <button type="submit" ng-disabled="loginForm.$invalid || vm.dataLoading" class="btn btn-primary"><span class="glyphicon glyphicon-lock"></span>	Login</button>
+            <!-- <a href="#/register" class="btn btn-link">Register</a>-->
+        </div>
+	</form>
+	</div>
+   	</div>
+	</div>
+	

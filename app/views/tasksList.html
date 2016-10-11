@@ -1,0 +1,6 @@
+	<!-- search here<input type="text" ng-model="searchBox.$" > -->
+	<div class="container" ng-controller="taskListCtrl">	
+		<p class="form-group" ng-repeat="todo in tasks">
+		    <input type="text"   value = '{{todo.task}}'  class="form-control"/> 
+	  	</p>
+  	</div>

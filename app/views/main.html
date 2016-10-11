@@ -1,0 +1,30 @@
+<div class="container" ng-controller="MainCtrl">
+  <h2>My Tasks</h2>
+<!--add new task-->
+  <form role="form" >  <!-- ng-submit="addTask() -->
+    <div class="row">
+      <div class="input-group">
+        <input type="text" name="task" ng-model="todo" placeholder="Add a new task" class="form-control">
+        <span class="input-group-btn">
+          <input type="submit" ng-click="addTask()" class="btn btn-primary" value="Add">
+          <!--  <input type="button" ng-click="getTaskList()" class="btn btn-primary" value="show"> -->
+        </span>
+      </div>
+    </div>
+  </form>
+<div>
+  <table>
+  <tr ng-repeat="todo in tasks">
+    <td>{{todo.task}}</td>
+  </tr>
+</table>
+</div>
+
+
+
+<!--list of tasks           
+  <p class="form-group" ng-repeat="todo in tasks">
+    <span>{{tasks}}</span>
+    <input type="text"   ng-model="todo" class="form-control"/> 
+  </p> -->
+</div>

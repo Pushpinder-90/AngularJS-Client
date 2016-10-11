@@ -1,0 +1,43 @@
+<div class="col-md-6 col-md-offset-3" ng-controller="registerCtrl">
+	<form name="registerForm" novalidate ng-submit="register()" class="form-group">
+			
+			<div ng-class="{'has-error':registerform.firstName.$invalid && registerForm.firstName.$dirty,'has-success':registerForm.firstName.$valid && registerForm.firstName.$dirty}">
+				<label for="firstName" class="control-label" >First Name</label>
+				<input type="text" name="firstName" class="form-control"  ng-model="user.firstName" required/>
+				<p ng-show="registerForm.firstName.$invalid && registerForm.firstName.$dirty">
+					Wrong input</p>
+			</div>
+			<div ng-class="{'has-error':registerform.lastName.$invalid && registerForm.lastName.$dirty,'has-success':registerForm.lastName.$valid && registerForm.lastName.$dirty}">
+				<label for="lastName" class="control-label" >Last Name</label>
+				<input type="text" name="lastName" class="form-control" ng-model="user.lastName" required/>
+				<p ng-show="registerForm.lastName.$invalid && registerForm.lastName.$dirty ">
+					Wrong input</p> 
+			</div>
+			<div ng-class="{'has-error':registerform.email.$invalid && registerForm.email.$dirty,'has-success':registerForm.email.$valid && registerForm.email.$dirty}">
+				<label for="email" class="control-label" >Email</label>
+				<input type="email" name="email" class="form-control" ng-model="user.email" required/>
+				<p ng-show="registerForm.email.$invalid && registerForm.email.$dirty ">
+					Wrong email</p> 
+			</div>
+
+			<div class="form-group" ng-class="{'has-error':registerForm.password.$invalid && registerForm.password.$dirty,'has-success':registerForm.password.$valid && registerForm.password.$dirty}">
+				<label for="password" class="control-label">Password</label>
+				<input type="password" name="password" class="form-control" ng-model="user.password" required/>
+				<p ng-show="registerForm.password.$invalid && registerForm.password.$dirty ">
+					Wrong password</p> 
+			</div>
+			<!-- <div class="form-actions">
+        		Upload Image :<input type="file"   file-model="user.imageFile"/> 
+        	</div> -->
+			<div class="form-actions">
+            <button type="submit" ng-disabled="registerForm.$invalid || vm.dataLoading" class="btn btn-primary"><span class="glyphicon glyphicon-phone"></span>Sign Up</button>
+            <a href="#/loginUser" class="btn btn-link">Cancel</a>
+        	</div>
+
+<!--         	<div >
+    			 <img ng-src="styles/pingu.jpg"></img>
+			</div> -->
+
+</form>
+</div>
+
